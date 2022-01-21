@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vote </title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .bg-1 { 
+        background-color: #1abc9c;
+        color: #ffffff;
+      }
+      .bg-2 { 
+        background-color: #474e5d;
+        color: #ffffff;
+      }
+      .bg-3 { 
+        background-color: #ffffff;
+        color: #555555;
+      }
+      .bg-4 { 
+        background-color: #2f2f2f; /* Black Gray */
+        color: #fff;
+      }
+      .container-fluid {
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
+      .foot {
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+      </style>
+  </head>
+  <body>
+  <nav class=" navbar navbar-inverse navbar-fixed-top">
+    <div >
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Voting DApp</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#vote">Vote</a></li>
+          <li><a href="#stats">Stats</a></li>
+          <li><a href="#cands">Candidates</a></li>
+        </ul>
+    </div>
+  </nav>
+  <div class="container container-fluid" style="width: 650px;" id="vote" >
+  <h1 class="text-center">Trust us with your vote</h1>
+  <form onSubmit="App.castVote(); return false;">
+    <div class="form-group">
+      <label for="candidatesSelect">Select Candidate</label>
+      <select class="form-control" id="candidatesSelect">
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Vote</button>
+    <hr />
+  </form>
+  <p id="accountAddress" class="text-center"></p>
+  </div>
+<div class="container " style="width: 650px;" id="stats">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="text-center">Stats</h1>
+      <hr/>
+      <br/>
+      <div id="loader">
+        <p class="text-center">Loading...</p>
+      </div>
+      <div id="content" style="display: none;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Votes</th>
+            </tr>
+          </thead>
+          <tbody id="candidatesResults">
+          </tbody>
+        </table>
+        <hr/>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+  <div class="container foot" id="cands">
+  <h2 class="text-center">Get To Know The Candidates</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a  href="images/cand1.jpg" target="_blank">
+          <img  src="images/cand1.jpg" alt="Lights" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a  href="images/cand1.jpg" target="_blank">
+          <img src="images/cand1.jpg" alt="Nature" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="images/cand1.jpg" target="_blank">
+          <img  src="images/cand1.jpg" alt="Fjords" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="foot bg-4 text-center">
+  <p>Voting dapp made with blockchain and brough to you by <a href="https://ethereum.org/">Ethereum</a> </p> 
+</footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
